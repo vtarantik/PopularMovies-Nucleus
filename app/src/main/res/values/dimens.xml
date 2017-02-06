@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="row_movies_padding_top">5dp</dimen>
+    <dimen name="row_movies_padding_bottom">5dp</dimen>
+    <dimen name="row_text_rating_size">14sp</dimen>
+    <dimen name="row_text_title_size">18sp</dimen>
+    <dimen name="row_title_padding_bottom">5dp</dimen>
+    <dimen name="moviesfragment_load_more_padding">16dp</dimen>
+    <dimen name="moviedetailfragment_padding">16dp</dimen>
+    <dimen name="mainactivity_toolbar_text_size">20sp</dimen>
+</resources>

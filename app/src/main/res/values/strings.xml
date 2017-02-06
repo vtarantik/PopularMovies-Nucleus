@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <string name="list_empty">No data to show!</string>
+    <string name="api_key">4aa883f95999ec813b8bfaf319f3972b</string>
+    <string name="moviesfragment_search_hint">Search</string>
+    <string name="moviesfragment_loading_more">Loading more...</string>
+    <string name="movie_detail_release_date">Release date:</string>
+    <string name="movie_detail_rating">Rating:</string>
+    <string name="mainactivity_title">Movie list</string>
+</resources>
