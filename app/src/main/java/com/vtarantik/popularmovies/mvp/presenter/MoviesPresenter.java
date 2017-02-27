@@ -32,7 +32,6 @@ public class MoviesPresenter extends RxPresenter<IMoviesView> {
 
     public static final int FIND_MOVIE = 3;
 
-    public static final int SHOW_SEARCH_RESULTS = 4;
 
     @Inject
     IApiInteractor apiInteractor;
@@ -40,12 +39,7 @@ public class MoviesPresenter extends RxPresenter<IMoviesView> {
     @Inject
     MovieDao movieDao;
 
-    private List<Movie> movies;
-
-    private boolean showProgress = true;
-
     private int currentPage = 1;
-    private int totalPages = 0;
 
     @Override
     protected void onCreate(Bundle savedState) {
@@ -74,7 +68,6 @@ public class MoviesPresenter extends RxPresenter<IMoviesView> {
                         Log.d(TAG,"delete table");
                     }
                     currentPage = pageNumber;
-                    totalPages = movies1.getTotal_pages();
                     if (movies1.getMovies() != null && !movies1.getMovies().isEmpty()) {
                         movieDao.insertInBatch(movies1.getMovies())
                                 .subscribeOn(Schedulers.newThread())
@@ -83,10 +76,7 @@ public class MoviesPresenter extends RxPresenter<IMoviesView> {
                     }
 
                 }),
-                (iMoviesView, throwable) -> {
-
-                    viewStoredMovies();
-                }
+                (iMoviesView, throwable) -> viewStoredMovies()
 
         );
 
@@ -98,7 +88,7 @@ public class MoviesPresenter extends RxPresenter<IMoviesView> {
     }
 
     /*
-     * Sends movies stored in DB to hte associated view
+     * Sends movies stored in DB to the associated view
      */
 
     public void viewStoredMovies() {
