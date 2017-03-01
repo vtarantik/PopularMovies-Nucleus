@@ -20,7 +20,7 @@ android {
         }
     }
     buildTypes.each {
-        it.buildConfigField 'String', 'MOVIEDB_API_KEY', MovieDBApiKey
+        it.buildConfigField 'String', 'MOVIEDB_API_KEY', MOVIEDB_API_KEY
     }
     compileOptions {
         targetCompatibility 1.8

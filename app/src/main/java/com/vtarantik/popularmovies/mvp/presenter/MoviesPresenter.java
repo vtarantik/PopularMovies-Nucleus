@@ -117,6 +117,7 @@ public class MoviesPresenter extends RxPresenter<IMoviesView> {
                         .observeOn(AndroidSchedulers.mainThread()),
                 ((iMoviesView, movies1) -> {
                     if (movies1.getMovies() != null && !movies1.getMovies().isEmpty()) {
+                        iMoviesView.showEmpty(false);
                         iMoviesView.showData(movies1.getMovies());
 
                     } else {
